@@ -34,15 +34,15 @@ public static void main(String[] args) {
 
   int a = 7;
   int b = 3;
-  int reminder = a - b;
+  int reminder = a % b;
   System.out.println("the variable reminder is " + reminder);
 
   int e = 7;
   int o = 8;
   int y = 4;
-  int x = 10;
+  int x = 2;  //7-8*x/4
 
-  int result = e - o * x / y;
+  int result = e - o * x / y;//3
   System.out.println("the result is" + result);
 
     
