@@ -41,7 +41,7 @@ public static void main(String[] args) {
   int o = 8;
   int y = 4;
   int x = 2;  //7-8*x/4
-
+//x = (e-result) / (o/y) ???
   int result = e - o * x / y;//3
   System.out.println("the result is" + result);
 
