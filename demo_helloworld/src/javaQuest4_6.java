@@ -26,7 +26,7 @@ public class javaQuest4_6 {
         System.out.println("The last index of '" + target + "' is: " + last);
     }
     /////////////////////////////
-    int frist = 0 , second = 1;
+    int first = 0 , second = 1;
     System.out.print(first + " " + second + " ");
     for (int i = 0; i < 13; i++) {
       int next = first + second;
