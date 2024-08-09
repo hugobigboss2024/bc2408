@@ -98,6 +98,18 @@ arr9[0] = arr9[1];
 arr9[1] = backup;
 System.out.println(arr9[0]);
 System.out.println(arr9[1]);
+//Ex8 //loop&swap
+//move the first character to the tall
+//you cannot careate another array
+//
+//char[] arr10 = new char[]{'9','4','3','2','1','0'};
+//char a1 = arr10[0];
+//for(int i = 0; i < arr10.length -1; i++){
+//arr10[i] = arr10[i=1];
+//arr10[arr10.length -1] = a1;
+//}
+//arr10[arr10.length -1] = a1;
+//System.out.println(Arrays.toString(arr10));
 
  }
 }
