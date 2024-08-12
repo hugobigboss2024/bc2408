@@ -1,8 +1,7 @@
-public class forLoop {
-  public static void main(String[] args) {
-      //two for loops
-      
-       
+package idea;
 
+public class idea_st {
+  public static void main(String[] args) {
+      
   }
 }

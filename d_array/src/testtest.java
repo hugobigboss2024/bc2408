@@ -1,3 +1,4 @@
+
 public class testtest {
   public static void main(String[] args) {
     int[] scores = new int[5];
@@ -17,5 +18,25 @@ public class testtest {
     average = (double) sum / scores.length;
     
     System.out.println("Average score = " + average);
+    /////////////////////////
+    for(int i = 1; i <= 10; i++){
+    System.out.println("5times");}
+    /////////////////////
+    for(int i = 5; i >= 1; i--){
+      System.out.println(i);
+    }
+    /////////////////////////
+    for(int i = 1; i <= 5; i ++){
+      System.out.println("this is" + i + "thimes");}
+      ///////////////////
+      int sun = 0;
+      for(int i = 1; i <= 5; i++){
+      //System.out.println(i);
+      sun = sun += i;
+      }System.out.println(sun);
+      ////////////////////
+      
+
+    }
   }
-}
+
