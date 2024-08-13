@@ -29,9 +29,19 @@ public class javaQuest10 {
 
     System.out.println("Original Array : " + Arrays.toString(my_array));
 
-    // code here ...
+  int[] newArr = new int[my_array.length];
 
-     //my_array = newArr;
-    System.out.println("New Array: " + Arrays.toString(newArr));
-  }
-}
+  for (int i = 0, j = 0; i < my_array.length; i++, j++) {
+      if (i == indexPosition) {
+          newArr[j] = newValue;  
+          j++;  
+      }
+      if (j < my_array.length) {
+          newArr[j] = my_array[i]; 
+      }}
+  
+  //my_array = newArr;  
+ //my_array = newArr;
+     System.out.println("New Array: " + Arrays.toString(newArr));
+  }}
+

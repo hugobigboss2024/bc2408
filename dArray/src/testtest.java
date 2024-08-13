@@ -35,7 +35,18 @@ public class testtest {
       sun = sun += i;
       }System.out.println(sun);
       ////////////////////
-      
+      int[] arr = {1,3,4,5,6};
+      int sex = 0;
+      int  two = 2;
+      sex = arr[4];
+      arr[4] = arr[3];
+      arr[3] = arr[2];
+      arr[1] = arr[2];
+      arr[1] = two;
+      //System.out.println(arr.toString());//why is [I@31befd9f???
+      for(int i = 0; i < arr.length; i++){
+        System.out.println(arr[i]);
+      }
 
     }
   }
