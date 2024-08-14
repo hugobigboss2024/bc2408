@@ -1,4 +1,4 @@
-public class javaQuest7_8 {
+public class javaQuest7_11 {
   public static void main(String[] args) {
       
 //總和是55
@@ -24,5 +24,15 @@ public class javaQuest7_8 {
 
     
     int secondMax;
+   /////////////////////////////////////////////////
+  
+    int delayedArrivalTime1 = findDelayedArrivalTime(15, 5); // 20
+    int delayedArrivalTime2 = findDelayedArrivalTime(23, 5); // 4
+    int delayedArrivalTime3 = findDelayedArrivalTime(18, 6); // 0
+      
   }
+  public static int findDelayedArrivalTime(int arrivalTime, int delayedTime) {
+    // code here ...
+  }
+
 }

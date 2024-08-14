@@ -37,6 +37,9 @@ public static void main(String[] args) {
       max = arr3[i];
     }
   }System.out.println(max);
-
+  ////////////////////////////
+  pay1();
+}public static void pay1(){
+  System.out.println("set a");
 }
 }

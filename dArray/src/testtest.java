@@ -43,11 +43,23 @@ public class testtest {
       arr[3] = arr[2];
       arr[1] = arr[2];
       arr[1] = two;
-      //System.out.println(arr.toString());//why is [I@31befd9f???
+      System.out.println(arr.toString());//why is [I@31befd9f???
       for(int i = 0; i < arr.length; i++){
         System.out.println(arr[i]);
+        pay1();
+        getLength(5.2, 1.3);
       }
+      
 
     }
+    
+    public static void pay1(){
+      System.out.println("set a");
+    }
+    public static void getLength(double  len , double width) {
+      double reault = (lan + width) * 2;
+      System.out.println(reault);
+    }
+    
   }
 
