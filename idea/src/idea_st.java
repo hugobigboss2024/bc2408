@@ -37,9 +37,14 @@ public static void main(String[] args) {
       max = arr3[i];
     }
   }System.out.println(max);
-  ////////////////////////////
-  pay1();
-}public static void pay1(){
-  System.out.println("set a");
-}
+   ////////////////////////////  
+   //encrypted1("qwer", 3);  //word??
+
+}public String encrypted1(String s, int k){
+    String s1 = "";
+    for(int i = 0; i < s.length(); i++){
+      s1 += s.charAt(( i + k ) & s.length());
+    }return s1;
+    
+  }
 }
