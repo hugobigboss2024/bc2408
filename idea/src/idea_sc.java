@@ -16,8 +16,9 @@ public class idea_sc {
     }
     }System.out.println(count);
     /////////////////////////
-    
+    //encrypted1("qwer", 3);  //word?????
+
 
   }
-  
+
 }

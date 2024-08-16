@@ -198,7 +198,7 @@ System.out.println(arr9[1]);
       }
      }System.out.println("max. counts value=" + target);
      //這段代碼的目的是找出 arr20 數組中出現次數最多的數字的值。通過使用 counts 數組記錄每個數字的出現次數,然後遍歷 counts 數組找到出現次數最多的數字,最終輸出它的值。
-
+     
      
 
      

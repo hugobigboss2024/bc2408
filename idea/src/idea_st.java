@@ -39,6 +39,8 @@ public static void main(String[] args) {
   }System.out.println(max);
    ////////////////////////////  
    //encrypted1("qwer", 3);  //word??
+   // System.out.println(encrypoted1("qwer", 3));  //word too?
+   
 
 }public String encrypted1(String s, int k){
     String s1 = "";
