@@ -9,6 +9,7 @@ public class Staff {
   //intance method
   // getter // setter
   // presenetation
+  
   public String getFullName(){
     return this.firstName + " " + this.lastName;
   }

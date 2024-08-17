@@ -32,8 +32,7 @@ public class StringBoc {
     public String toString() {
       return String.valueOf(this.character);
     }
-    public String subString(int beginIndex, int endIndex){
-      
-    }
+    //public String subString(int beginIndex, int endIndex){}
+
 
 }
