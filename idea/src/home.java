@@ -86,9 +86,44 @@ public class home {
     System.out.println(arr3[i]);
    }
    //////////////////////////////////////////////////////////
-
-   
+   //digital encryptiom
+   int[] arr4 = {1,9,8,3};
+   for(int i = 0; i < arr4.length; i++){
+     arr4[i] = arr4[i] + 5;
+   }
+   for(int i = 0; i < arr4.length; i++){
+    arr4[i] = arr4[i] % 10;
   }
+  for(int i = 0, j = arr4.length - 1; i < j; i++, j--){//number reversal
+    int temp = arr4[i];
+    arr4[i] = arr4[j];
+    arr4[j] = temp;
+  }
+  int numbers = 0;
+   for(int i = 0; i < arr4.length; i++){
+     numbers = numbers * 10 + arr4[i];//array change to int(int[] -> int)
+   } 
+   System.out.println(numbers);
+   ////////////////////////////////////
+   int number1 = 12345;
+   int temp1 = number1;
+   int count1 = 0;
+   while(number1 != 0){
+    number1 = number1 / 10;
+    count1++;
+   }
+   int[] arr5 = new int[count];
+   int index1 = arr5.length - 1;
+   while(temp1 != 0){
+    int ge = temp1 % 10;
+    temp1 = temp1 / 10;
+    arr5[index1] = ge;
+    index1--;
+  }
+  for(int i = 0; i < arr5.length; i++){
+    System.out.print(arr5[i] + " ");
+  }
+  ////////////////////////////////////////////
   
   }
   public static void change(int[] arr1){
