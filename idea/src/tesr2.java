@@ -13,5 +13,23 @@ public class tesr2 {
           
         }
       }
+      int a = 0;
+      while(a<3){
+        switch (a){
+        case 0:
+        System.out.println("0");
+        case 2:
+        System.out.println("2");  
+        }
+        a++;
+      }
+      String str = "";
+      for (byte i = 127; i < 128; i++){
+        if(i < 0){
+          break;
+        }
+        str += i;
+      }
+      System.out.println(str);
   }
 }

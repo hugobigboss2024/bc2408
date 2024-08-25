@@ -1,5 +1,7 @@
 package coustomer;
 
+import java.math.BigDecimal;
+
 public class Item {
   private double price;
   private int quantit;
@@ -22,6 +24,10 @@ public int getQuantit(){
 }
 public int getDay(){
   return this.day;
+}
+public double itemTotal(){
+  BigDecimal price = BigDecimal.valueOf(this.price);
+  return price.multiply(this.quantity);
 }
 /*public void setPrice(double price){
   this.price = price;
