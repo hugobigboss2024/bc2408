@@ -10,12 +10,15 @@ public class Cat extends Animal {
     this.color = color;
   }
 
+  // implicitly call super()
   public Cat(String color) {
+    super(); // call parant empty constructor
     this.color = color;
   }
 
+  // implicitly call super()
   public Cat() {
-
+    super(); // call parant empty constructor
   }
 
   public String getColor() {
@@ -31,6 +34,10 @@ public class Cat extends Animal {
   // public void eat() {
   //   System.out.println("Cat is eating ...");
   // }
+
+  public void run() {
+    this.eat();
+  }
 
   public String toString() {
     return "Cat(" //
@@ -65,7 +72,6 @@ public class Cat extends Animal {
 
     // if there is NO eat() method in Cat.class
     cat3.eat(); // Animal is eating ...
+    cat3.run(); // Animal is eating ...
 
-
-  }
-}
+  }}

@@ -1,6 +1,6 @@
 
 
-public class DemoChart {
+public class DemoChartInt {
   public static void main(String[] args) {
     char c = 'A';
     int x = c; // upcasting / promotion
