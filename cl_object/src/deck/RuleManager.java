@@ -16,8 +16,8 @@ public class RuleManager {
 
   public static void main(String[] args) {
     RuleManager ruleManager = new RuleManager();
-    boolean result = ruleManager.isPair(Card.of(Rank.ofACE(), Suit2.DIAMOND) //
-        , Card.of(Rank.ofACE(), Suit2.CLUB));
+    boolean result = ruleManager.isPair(Card.of(PokerRank.ofACE(), Suit2.DIAMOND) //
+        , Card.of(PokerRank.ofACE(), Suit2.CLUB));
 
     System.out.println(result);
   }

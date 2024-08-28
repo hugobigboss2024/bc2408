@@ -1,7 +1,7 @@
 package cl_object.src.deck;
 
 public class PairManager {
-   // !!! final -> Card array object reference, but you can still change the card object
+    // !!! final -> Card array object reference, but you can still change the card object
   // !!! unless you provide setter to revise the card object
   private final Card[] cards;
 
@@ -19,16 +19,16 @@ public class PairManager {
   // }
 
   public static void main(String[] args) {
-    boolean result = new PairManager(new Card(Rank.ofACE(), Suit2.DIAMOND),
-        new Card(Rank.ofACE(), Suit2.SPADE)).isPair();
+    boolean result = new PairManager(new Card(PokerRank.ofACE(), Suit2.DIAMOND),
+        new Card(PokerRank.ofACE(), Suit2.SPADE)).isPair();
 
-    boolean result2 = new PairManager(new Card(Rank.ofACE(), Suit2.DIAMOND),
-        new Card(Rank.ofKING(), Suit2.DIAMOND)).isPair();
-    boolean result3 = new PairManager(new Card(Rank.ofACE(), Suit2.DIAMOND),
-        new Card(Rank.ofJACK(), Suit2.SPADE)).isPair();
+    boolean result2 = new PairManager(new Card(PokerRank.ofACE(), Suit2.DIAMOND),
+        new Card(PokerRank.ofKING(), Suit2.DIAMOND)).isPair();
+    boolean result3 = new PairManager(new Card(PokerRank.ofACE(), Suit2.DIAMOND),
+        new Card(PokerRank.ofJACK(), Suit2.SPADE)).isPair();
 
-    boolean result4 = new PairManager(new Card(Rank.ofACE(), Suit2.DIAMOND),
-        new Card(Rank.ofACE(), Suit2.DIAMOND)).isPair();
+    boolean result4 = new PairManager(new Card(PokerRank.ofACE(), Suit2.DIAMOND),
+        new Card(PokerRank.ofACE(), Suit2.DIAMOND)).isPair();
 
     System.out.println(result); // true
     System.out.println(result2); // false

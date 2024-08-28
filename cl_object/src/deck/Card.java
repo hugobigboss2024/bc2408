@@ -39,12 +39,11 @@ public class Card {
   public int compareTo(Card card) {
     // fixed rules
     // this (address) vs card (address)
-    int rankResult = this.rank.compareTo(card.getRank());
+    int rankResult = this.rank.compareTo(card.getRank()); // Run-time Polymorphism
     if (rankResult == 0) {
       if (this.suit.compare(card.getSuit()) == 0) { // !!! should use compare()
         return 0;
-      } else if (this.suit.compare(card.getSuit()) > 0) { // !!! should use
-                                                          // compare()
+      } else if (this.suit.compare(card.getSuit()) > 0) { // !!! should use compare()
         return 1;
       }
       return -1; // base case
@@ -61,10 +60,10 @@ public class Card {
 
   public static void main(String[] args) {
     // valueOf(''),
-    Card c1 = new Card(Rank.ofACE(), Suit2.DIAMOND);
-    Card c2 = new Card(Rank.ofACE(), Suit2.CLUB);
-    Card c3 = new Card(Rank.ofJACK(), Suit2.DIAMOND);
-    Card c4 = new Card(Rank.ofJACK(), Suit2.DIAMOND);
+    Card c1 = new Card(PokerRank.ofACE(), Suit2.DIAMOND);
+    Card c2 = new Card(PokerRank.ofACE(), Suit2.CLUB);
+    Card c3 = new Card(PokerRank.ofJACK(), Suit2.DIAMOND);
+    Card c4 = new Card(PokerRank.ofJACK(), Suit2.DIAMOND);
 
     System.out.println(c2.compareTo(c1)); // 1
     System.out.println(c1.compareTo(c2)); // -1

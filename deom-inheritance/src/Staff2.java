@@ -1,4 +1,5 @@
-package deom-inheritance.src;
+import java.time.LocalDate;
+import java.util.Objects;
 
 public class Staff2 {// implicitly extending Object.class
   private String name;
@@ -32,8 +33,8 @@ public class Staff2 {// implicitly extending Object.class
   public boolean equals(Object obj) { // same name -> true, otherwise false
     if (this == obj)
       return true;
-    if (!(obj instanceof Staff2)) // before downcast, we usually conside to use
-                                  // "instanceof"
+    // before downcast, we usually consider to use "instanceof"
+    if (!(obj instanceof Staff2))
       return false;
     // because we do not have staff object, so we cannot getName()
     // Parent -> Child (downcast)
@@ -58,6 +59,12 @@ public class Staff2 {// implicitly extending Object.class
         .println(new Staff2("John", LocalDate.of(2024, 1, 1)).equals(null)); // false
     System.out.println(new Staff2("John", LocalDate.of(2024, 1, 1))
         .equals(new Staff2("John", LocalDate.of(2024, 1, 1)))); // true
+
+    System.out.println(new Staff2("John", LocalDate.of(2024, 1, 1)).hashCode()); // 75896887
+    System.out.println(new Staff2("John", LocalDate.of(2024, 1, 1)).hashCode()); // 75896887
+    System.out.println(new Staff2("John", LocalDate.of(2024, 1, 2)).hashCode()); // 75896888
+    System.out.println(new Staff2("Joho", LocalDate.of(2024, 1, 2)).hashCode()); // 75896919
   }
+
 
 }
