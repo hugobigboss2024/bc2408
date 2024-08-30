@@ -26,11 +26,11 @@ public class Test6 {
         if(!(obj instanceof Test6))
         return false;
         Test6 test6 = (Test6) obj;
-        return Object.equals(this.name, Test6.getName())//
-        &&Object.equals(this.toDay, Test6.getToDay());
+        return Objects.equals(this.name, test6.getName())//
+        &&Objects.equals(this.toDay, test6.getToDay());
     }
     @Override
     public int hashCode(){
-        return Object.hash(this.name, this.toDay);
+        return Objects.hash(this.name, this.toDay);
     }
 }
