@@ -1,4 +1,5 @@
 {
   "commentTranslate.targetLanguage": "zh-TW",
-  "commentTranslate.hover.enabled": false
+  "commentTranslate.hover.enabled": false,
+  "java.debug.settings.onBuildFailureProceed": true
 }

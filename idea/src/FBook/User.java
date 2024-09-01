@@ -1,4 +1,4 @@
-package idea.src.FBook;
+package fbook;
 
 public class User {
   private String username;
