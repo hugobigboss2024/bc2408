@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "JustForTest",
+            "request": "launch",
+            "mainClass": "listofstudent.JustForTest",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "Color",
+            "request": "launch",
+            "mainClass": "sorting.Color",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "StudentArray2",
+            "request": "launch",
+            "mainClass": "listofstudent.StudentArray2",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "StudentArray",
+            "request": "launch",
+            "mainClass": "listofstudent.StudentArray",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "TestArryList",
+            "request": "launch",
+            "mainClass": "listTest.TestArryList",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
             "name": "TestDeque",
             "request": "launch",
             "mainClass": "listTest.TestDeque",
