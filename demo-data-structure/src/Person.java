@@ -3,6 +3,7 @@ import java.util.PriorityQueue;
 public class Person implements Comparable<Person> {
   private String name;
   private int age;
+  // private HKID hkid; // person.getHKID().getValue()
 
   public Person(String name, int age) {
     this.name = name;
@@ -12,6 +13,10 @@ public class Person implements Comparable<Person> {
   public String getName() {
     return this.name;
   }
+
+  // public HKID getHKID() {
+  //   return this.hkid;
+  // }
 
   public int getAge() {
     return this.age;

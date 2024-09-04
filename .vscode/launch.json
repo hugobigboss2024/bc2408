@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestStatic",
+            "request": "launch",
+            "mainClass": "idea.src.TestMethod.TestStatic",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "TestEditor",
+            "request": "launch",
+            "mainClass": "TestEditor",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "DemoHashMap",
+            "request": "launch",
+            "mainClass": "DemoHashMap",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "Person",
+            "request": "launch",
+            "mainClass": "Person",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
             "name": "JustForTest",
             "request": "launch",
             "mainClass": "listofstudent.JustForTest",
