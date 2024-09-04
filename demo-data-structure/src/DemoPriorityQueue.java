@@ -24,7 +24,11 @@ public class DemoPriorityQueue {
     System.out.println(pq.poll()); // abc
     System.out.println(pq.poll()); // bac
 
+    // Custom order
+    // Tips: Class for sorting (Comparator)
+    Queue<String> pq2 = new PriorityQueue<>(new StringDesc());
 
-
+    // Person.class (name, age), isElderly()
+    // PriorityQueue, Elderly always goes first.
   }
 }
