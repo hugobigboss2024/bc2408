@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ThisConstructor",
+            "request": "launch",
+            "mainClass": "idea.src.Oopmethod.ThisConstructor",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "ExtendsConstructor",
+            "request": "launch",
+            "mainClass": "idea.src.Oopmethod.ExtendsConstructor",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "Constructros",
+            "request": "launch",
+            "mainClass": "idea.src.Oopmethod.Constructros",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "FieldMethod",
+            "request": "launch",
+            "mainClass": "idea.src.Oopmethod.FieldMethod",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "DemoAllTest",
+            "request": "launch",
+            "mainClass": "idea.src.TestMethod.DemoAllTest",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "Demo",
+            "request": "launch",
+            "mainClass": "idea.src.txtends.Demo",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
             "name": "TestStatic",
             "request": "launch",
             "mainClass": "idea.src.TestMethod.TestStatic",
