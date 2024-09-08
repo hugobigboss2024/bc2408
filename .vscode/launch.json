@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "idea.src.Oopmethod.polymorphic.Test",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "idea.src.Oopmethod.Test",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "AbstractTest",
+            "request": "launch",
+            "mainClass": "idea.src.Oopmethod.AbstractTest",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
             "name": "ThisConstructor",
             "request": "launch",
             "mainClass": "idea.src.Oopmethod.ThisConstructor",
