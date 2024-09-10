@@ -1,4 +1,4 @@
-public class Color{
+public class Color {
   private static final String RED = "RED";
   private static final String BLUE = "BLUE";
 

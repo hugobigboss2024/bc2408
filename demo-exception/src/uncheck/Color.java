@@ -1,3 +1,5 @@
+package uncheck;
+
 public enum Color {
     RED('R'), GREEN('G'), BLUE('B'),;
 

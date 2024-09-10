@@ -1,3 +1,5 @@
+package uncheck;
+
 public class NullPointer {
     public static void main(String[] args) {
         // !!!! Null Pointer Problem should never be "try/ catch"

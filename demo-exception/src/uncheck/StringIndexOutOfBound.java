@@ -1,3 +1,5 @@
+package uncheck;
+
 public class StringIndexOutOfBound {
     public static void main(String[] args) {
         // char[]

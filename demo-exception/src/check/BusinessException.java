@@ -1,3 +1,5 @@
+package check;
+
 // !!!! Once the class extends "Exception.class", this class becomes Checked
 // Exception class
 public class BusinessException extends Exception {

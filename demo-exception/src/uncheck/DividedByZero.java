@@ -1,3 +1,5 @@
+package uncheck;
+
 public class DividedByZero {
     public static void main(String[] args) {
         int x = 10 / 2;
