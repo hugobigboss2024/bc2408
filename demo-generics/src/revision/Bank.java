@@ -1,13 +1,13 @@
-package demo-generics.src.revision;
+package revision;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Bank {
     private List<Account> accounts;
 
     public Bank() {
-        this.accounts = new LinkedList<>();
+        this.accounts = new ArrayList<>();
     }
 
     public void add(Account account) {
@@ -22,5 +22,6 @@ public class Bank {
         Bank bank = new Bank();
         // Add Saving Account
         System.out.println(bank.sumOfBalance(AccountType.SAVING));
+        bank.add(new SavingAccount());
     }
 }

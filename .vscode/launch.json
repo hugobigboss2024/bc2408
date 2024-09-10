@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ExceptionChainExample",
+            "request": "launch",
+            "mainClass": "ExceptionChainExample",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "idea.src.wxception.Test",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "StaticTest",
+            "request": "launch",
+            "mainClass": "idea.src.Oopmethod.StaticTest",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "FinalTest",
+            "request": "launch",
+            "mainClass": "idea.src.Oopmethod.FinalTest",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "idea.src.forpacktest.Test",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
             "name": "Test",
             "request": "launch",
             "mainClass": "idea.src.Oopmethod.polymorphic.Test",

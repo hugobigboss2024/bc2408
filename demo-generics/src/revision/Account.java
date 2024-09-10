@@ -1,11 +1,12 @@
-package demo-generics.src.revision;
+package revision;
 
 import java.math.BigDecimal;
 
 public abstract class Account implements Creditable<Double>, Debitable<Double> {
     private static int count;
     private String accNo;
-    private double balance;
+    private Double balance;
+    // add attribute owner;
 
     public Account(String prefix) {
         this.accNo = this.genAccNo(prefix);
@@ -16,7 +17,7 @@ public abstract class Account implements Creditable<Double>, Debitable<Double> {
         return this.balance;
     }
 
-    public void setBalance(double balance) {
+    public void setBalance(double balance) { // setter -> primitve
         this.balance = balance;
     }
 
@@ -24,7 +25,10 @@ public abstract class Account implements Creditable<Double>, Debitable<Double> {
         return this.accNo;
     }
 
+    // handle null?
     public final void credit(Double amount) {
+        if (amount == null)
+            amount = 0.0;
         double newBalance = BigDecimal.valueOf(this.getBalance()) //
                 .add(BigDecimal.valueOf(amount)) //
                 .doubleValue();
@@ -32,6 +36,8 @@ public abstract class Account implements Creditable<Double>, Debitable<Double> {
     }
 
     public final boolean debit(Double amount) {
+        if (amount == null)
+            amount = 0.0;
         if (this.getBalance() < amount) {
             System.out.println("Insufficient Balance.");
             return false;
@@ -54,7 +60,7 @@ public abstract class Account implements Creditable<Double>, Debitable<Double> {
         account.credit(100.0);
         account.credit(58.0);
         account.debit(150.0);
-        account.debit(10.0); // Insufficient Balance.
+        account.debit(10.0); // false, "Insufficient Balance."
         System.out.println(account.getBalance()); // 8.0
 
         Account account2 = new SavingAccount();

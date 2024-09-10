@@ -1,22 +1,23 @@
-package fbook;
 
 public class User {
-  private String username;
-  private String password;
-  private String email;
-  private String gender;
-  private int age;
-//alt + insert
-//alt + fn + insert 
-  public User() {
-  }
-  public User(String username, String password, String email, String gender, int age) {
-    this.username = username;
-    this.password = password;
-    this.email = email;
-    this.gender = gender;
-    this.age = age;
-  }
+    private String username;
+    private String password;
+    private String email;
+    private String gender;
+    private int age;
+
+    // alt + insert
+    // alt + fn + insert
+    public User() {
+    }
+
+    public User(String username, String password, String email, String gender, int age) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.gender = gender;
+        this.age = age;
+    }
 
     public String getUsername() {
         return username;
@@ -58,6 +59,4 @@ public class User {
         this.age = age;
     }
 
-  
-  }
-
+}
