@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "LambdaTest",
+            "request": "launch",
+            "mainClass": "LambdaTest",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "Preson",
+            "request": "launch",
+            "mainClass": "Preson",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
+            "name": "test5",
+            "request": "launch",
+            "mainClass": "test5",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
             "name": "ExceptionChainExample",
             "request": "launch",
             "mainClass": "ExceptionChainExample",

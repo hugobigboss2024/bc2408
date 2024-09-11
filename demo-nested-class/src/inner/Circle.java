@@ -10,5 +10,8 @@ public class Circle implements Shape {
     public static void main(String[] args) {
         Shape shape = new Circle();
         // shape.getRadius
+        // !!! NOT OK
+        // shape.getRadius()
+        // shape.radius
     }
 }

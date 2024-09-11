@@ -31,3 +31,36 @@
 - Why do we need Inheritance + Polymorphism?
   - 1. abstract class type can be used in method parameter (i.e. Shape[] -> area)
   - 2. abstract class type can be an attribute of a class (i.e. Rank is an attribute of Card)
+
+  為了“延長”
+ - 父級屬性
+ - 如果是私有的，則不能繼承
+ - 如果是公開的，“this”類似於“alias”，指向“super”
+ - 父級建構函數
+ - 即使它是公共的，也不能繼承
+ - 相反，子類別透過「super」呼叫父建構函數
+ - 父類別中的方法
+ - 如果是公開的，“this”類似於“alias”，指向“super”
+ - 如果它是私有的，子類別不能透過「super」訪問
+ - 子類別可以「重寫」父類別中相同的方法
+- 繼承
+ - 父類別可以擁有自己的屬性
+ - 父類別本身可以建立對象
+- 無論您是在進行單獨的課程還是擴展，您都應該涵蓋以下內容...
+ - 等於()
+ - 哈希碼()
+ - toString()
+- 如果你不覆寫上面3個方法，你的類別預設繼承Parent的一個。
+ - 預設情況下，所有類別都有一個超級父級“Object.class”
+ - 「Object.class」利用「物件位址」來執行上述3個方法
+- 多態性
+ - 編譯時（靜態多態性）
+ - 「引用」的範圍由引用的型別決定
+ - 當將物件重新指派給較低層級的參考類型時，物件行為可能會有所不同。
+ - 運行時（動態多態性）
+ - 方法實作屬於物件本身（但不屬於引用型別）
+ - 方法實作屬於物件本身（但不屬於引用型別）
+
+- 為什麼我們需要繼承+多型？
+ - 1. 方法參數中可以使用抽象類別類型（即Shape[] ->區域）
+ - 2.抽象類別類型可以是類別的屬性（即Rank是Card的屬性）
