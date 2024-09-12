@@ -1,6 +1,7 @@
 package exercise;
 
 import java.util.Arrays;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -13,7 +14,7 @@ public class ExerciseStream {
                 .filter(n -> n % 2 == 0) // 過濾出偶數
                 .map(n -> n * n).sorted((a, b) -> b - a) // .sorted to排序
                 .collect(Collectors.toList()); //
-        System.out.println(result); // [100,64, 36, 16, 4]
+        System.out.println(result); // [100, 64, 36, 16, 4]
 
         // filtering and collecting // output[Alice,Annie,Alex] easy
         List<String> names = Arrays.asList("Alice", "Bob", "Annie", "David", "Alex");
@@ -38,9 +39,22 @@ public class ExerciseStream {
         // filtering and collecting to a Set // output[15,20] easy if [20,15]is ok!!
         List<Integer> numbers2 = Arrays.asList(5, 10, 15, 20, 10, 5);
         Set<Integer> result5 = numbers2.stream().filter(n -> n > 10)
-                .collect(Collectors.toSet());
+                // .collect(Collectors.toSet()); // [20,15]
+                // .collect(Collectors.toCollection(TreeSet::new));//[15, 20]
+                .collect(Collectors.toCollection(LinkedHashSet::new));// what is LinkedHashSet :: new //what is
+                                                                      // TreeSet::new??
+        // 使用 Collectors.toCollection(TreeSet::new) 是一個收集操作，它將流中的元素收集到一個 TreeSet 中。這裡的
+        // TreeSet::new 是 Java 8 引入的 方法引用（method reference）語法，用於創建一個 TreeSet 的新實例。
+        // TreeSet::new 是一個方法引用，它告訴 Java 創建一個新的 TreeSet 實例。自動排序：TreeSet
+        // 會根據元素的自然順序或提供的比較器進行排序。不允許重複元素：TreeSet 不會存儲重複的元素。
+        // 使用 Collectors.toCollection(LinkedHashSet::new) 是一種收集操作，將流中的元素收集到一個
+        // LinkedHashSet 中。這裡的 LinkedHashSet::new 是 Java 8 中的方法引用（method
+        // reference）語法，用於創建一個新的 LinkedHashSet 實例。
+        // LinkedHashSet::new 是一個方法引用，用於創建一個新的 LinkedHashSet 實例。保持插入順序：LinkedHashSet
+        // 使用鏈表來維護元素的插入順序，因此當您遍歷 LinkedHashSet 時，元素將按照它們被添加的順序排列。不允許重複元素：與其他 Set
+        // 實現一樣，LinkedHashSet 不允許有重複的元素。
 
-        System.out.println(result5);// [20,15]
+        System.out.println(result5);// [15, 20]
 
         // mapping to a map(key-value-pairs) // output[Alice=85, Bob=75] easy
         List<Student> students = Arrays.asList(new Student("Alice", 85), new Student("Bob", 75));
