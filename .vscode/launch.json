@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DemoLambdaFunction",
+            "request": "launch",
+            "mainClass": "DemoLambdaFunction",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
             "name": "LambdaTest",
             "request": "launch",
             "mainClass": "LambdaTest",
