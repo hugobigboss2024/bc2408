@@ -3,6 +3,7 @@ package exercise;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -77,21 +78,41 @@ public class ExerciseStream {
                 // 25=[Bob]} (Map)
                 List<Person> people = Arrays.asList(new Person("Alice", 30), new Person("Bob", 25),
                                 new Person("Charlie", 30));
+                Map<Integer, List<String>> result8 = people.stream().collect(Collectors.groupingBy(Person::getAge,
+                                Collectors.mapping(Person::getName, Collectors.toList())));
+                // Collectors.groupingBy()Person的年龄(age)value进行分组。put to Integer??
+                // Collectors.mapping(Person::getName, Collectors.toList())Person
+                // Object转换为其名称(name)put to List<String>
+
+                System.out.println(result8);// {30=[Alice, Charlie], 25=[Bob]}
 
                 // 10 partitioning and collecting to a Map(partition by Gender) output{fallse =
                 // [Alice], true = [Bob, Charlie]}
                 List<Person> people1 = Arrays.asList(new Person("Alice", "Female"), new Person("Bob", "Male"),
                                 new Person("Charlie", "Male"));
+                Map<Boolean, List<Person>> result9 = people1.stream().collect(Collectors.partitioningBy(
+                                p -> p.getSex().equals("Male"), Collectors.toList()));
+                System.out.println(result9.toString());// {false=[Alice], true=[Bob, Charlie]}
+                // Collectors.partitioningBy()Person的性别(sex)value进行分组
 
-                // 11 filtering, mapping, and collecting to a List output [30,40,60]
+                // 11 filtering, mapping, and collecting to a List output [30,40,60] easy
                 List<Integer> number3 = Arrays.asList(5, 15, 20, 7, 30);
+                List<Integer> result10 = number3.stream().filter(e -> e > 10).map(e -> e * 2).toList();
+                System.out.println(result10);// [30, 40, 60]
 
                 // 12 mapping to a custom object and collecting to a List //
                 // output[Person(name=Alic, Age=30),Person(name=Bob,
                 // Age=30),Person(name=Charlie, Age=30)]
                 List<String> names1 = Arrays.asList("Alice", "Bob", "Charlie");
                 int defaultAge = 30;
-
+                List<Person> persons1 = names1.stream().map(name -> new Person(name, defaultAge))
+                                .collect(Collectors.toList());
+                // List<Person> persons1 = names1.stream().map(name -> new Person(name,
+                // defaultAge)).toList();
+                // have or not have .collect(Collectors) at the end output is same,
+                // maybe justneed .toList every time??
+                System.out.println(persons1.toString());// [Person(name=Alic, Age=30),Person(name=Bob,
+                                                        // Age=30),Person(name=Charlie, Age=30)]
                 // 13 mapping and collecting to a deque // output[HELLO,WORLD,JAVA]
                 List<String> words2 = Arrays.asList("hello", "world", "java");
 

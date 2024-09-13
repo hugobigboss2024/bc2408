@@ -5,6 +5,8 @@ public class Customer {
     private int age;
     private String name;
     private List<Address> addresses;
+    // ! Bad Idea
+    // private Optional<Order> order; // size 0
 
     public Customer(int age) {
         this.age = age;
