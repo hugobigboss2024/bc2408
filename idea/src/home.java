@@ -139,6 +139,15 @@ public class home {
     }
     System.out.println(a);//
 
+    var r1 = 'a' + 5;// ascii
+    var r2 = '5' + 5;// ascii
+    var r3 = "5" + 5;// string
+    var r4 = 'z' + 999999999999l;
+    System.out.println("r1 = " + r1);// int 102
+    System.out.println("r2 = " + r2);// int 58
+    System.out.println("r3 = " + r3);// String "55"
+    System.out.println(r4);// long
+
   }
 
   public static void change(int[] arr1) {

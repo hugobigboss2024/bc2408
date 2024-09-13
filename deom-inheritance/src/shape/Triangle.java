@@ -1,6 +1,8 @@
-package deom
+package deom-inheritance.src.shape;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+
 public class Triangle extends Shape {
   // base, height
   private double base;

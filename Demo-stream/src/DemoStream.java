@@ -89,11 +89,37 @@ public class DemoStream {
         // average()
 
         // Array to Stream
+        // Arraays to IntStream to Strieam<Integer> to Set<Integer>
         int[] arr = new int[] { 3, 2, 1 };
         IntStream ints = Arrays.stream(arr);
         Stream<Integer> integers = ints.boxed();
         Set<Integer> integerSet = integers.collect(Collectors.toSet());
         System.out.println(integerSet);
+
+        // FlatMap.
+        List<Customer> customers5 = List.of( //
+                new Customer(20, "John", //
+                        List.of(new Customer.Address("john1", "john2"),
+                                new Customer.Address("john3", "john4"))),
+                new Customer(40, "Peter", //
+                        List.of(new Customer.Address("peter1", "peter2"),
+                                new Customer.Address("peter3", "peter4"))), //
+                new Customer(13, "Sally", //
+                        List.of(new Customer.Address("sally1", "sally2"))) //
+        );
+
+        // List<Address>, which includes all addresses from all customers
+        // for loop
+
+        // stream -> flatmap
+        List<Customer.Address> addresses = customers5.stream() // Stream<Customer>
+                // !!! // flatMap(): input stream object, return Stream<Address>
+                .flatMap(c -> c.getAddresses().stream()).collect(Collectors.toList());
+
+        System.out.println(addresses);
+        // [Address(line1=john1, line2=john2), Address(line1=john3, line2=john4),
+        // Address(line1=peter1, line2=peter2), Address(line1=peter3, line2=peter4),
+        // Address(line1=sally1, line2=sally2)]
 
     }
 }
