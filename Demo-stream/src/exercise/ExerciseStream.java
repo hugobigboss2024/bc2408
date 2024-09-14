@@ -1,6 +1,8 @@
 package exercise;
 
+import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Deque;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -115,13 +117,31 @@ public class ExerciseStream {
                                                         // Age=30),Person(name=Charlie, Age=30)]
                 // 13 mapping and collecting to a deque // output[HELLO,WORLD,JAVA]
                 List<String> words2 = Arrays.asList("hello", "world", "java");
+                // List<String> result11 = words2.stream().map(e ->
+                // e.toUpperCase()).collect(Collectors.toList());
+                // easy upCase
+                // Deque<String> result11a = new LinkedList<>(result11);
+                // List put to Deque
+                Deque<String> result11 = words2.stream().map(e -> e.toUpperCase())
+                                .collect(Collectors.toCollection(ArrayDeque::new));
+                // .toCollection(方法引用,用了 ArrayDeque创建一个新的 ArrayDeque Object)
+                System.out.println(result11);// [HELLO, WORLD, JAVA]
 
                 // 14 transforming and collecting to an Array // output[1,4,9,16]
                 List<Integer> number4 = Arrays.asList(1, 2, 3, 4);
+                int[] intArr = number4.stream().map(e -> e * e).mapToInt(Integer::intValue).toArray();
+                System.out.println(Arrays.toString(intArr));// [1, 4, 9, 16]
 
                 // 15 Map and Reduce // output 22
                 List<Product> products = Arrays.asList(new Product("Book", 10), new Product("Pen", 5),
                                 new Product("Notebook", 7));
+                // int sum1 = products.stream().mapToInt(Product::getPrice).sum();
+                int sum1 = products.stream().mapToInt(Product::getPrice).reduce(0, Integer::sum);
+                // (frome wherer[class]::want to get what)
+                // The reduce() method takes two arguments:
+                // .reduce(start Value from where::method ) //(T identity, BinaryOperator<T>
+                // accumulator)
+                System.out.println(sum1);// 22
 
                 // 16 grouoping // output{HR=[Alice, Charlie], IT=[Bob,David]}
                 List<Employee> employee2 = Arrays.asList(new Employee("Alice", "HR"), new Employee("Bob", "IT"),
