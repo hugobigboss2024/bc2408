@@ -3,9 +3,11 @@ package exercise;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -147,44 +149,101 @@ public class ExerciseStream {
                 List<Employee> employee2 = Arrays.asList(new Employee("Alice", "HR"), new Employee("Bob", "IT"),
                                 new Employee("Charlie", "HR"), new Employee("David", "IT"));
 
+                Map<String, List<Employee>> result12 = employee2.stream().collect(Collectors.groupingBy(
+                                Employee::getDepartment));
+                // Map<String, List<Employee>> // String:department, List<Employee>:employee
+                // (frome wherer[class]::want to get what[method])
+                System.out.println(result12.toString());// {HR=[Alice, Charlie], IT=[Bob,David]}
+
                 // 17 parallel streams // output 55
                 List<Integer> number5 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+                // int sumByArr = number5.parallelStream().reduce(0, Integer::sum); //55
+                // System.out.println(number5.stream().parallel().reduce(0, Integer::sum));// 55
+                List<Integer> sumList = Arrays.asList(number5.stream().mapToInt(Integer::intValue).sum());
+                // Arrays.asList again//get all value at List<Integer> andthen get sum//
+                // no need to toList because i coded Arrays.asList in start
+                System.out.println(sumList);
 
                 // 18 flatMap // output [6,7,8,9]
                 List<List<Integer>> listOfLists = Arrays.asList(Arrays.asList(1, 2, 3), Arrays.asList(4, 5, 6),
                                 Arrays.asList(7, 8, 9));
-
+                List<Integer> result13 = listOfLists.stream().flatMap(List::stream).filter(e -> e > 5)
+                                .collect(Collectors.toList());
+                // flatMap(List::stream)
+                // flattens the stream of inner lists into a single streaof integers.
+                System.out.println(result13);// [6, 7, 8, 9]
                 // 19 distinct and Sorting // output[apple,banana,grape,arange]
                 List<String> words3 = Arrays.asList("apple", "banana", "apple", "orange", "banana", "grape");
+                List<String> result14 = words3.stream().distinct().sorted().collect(Collectors.toList());
+                System.out.println(result14);// [apple, banana, grape, orange]
+                // .distinct()去除重复的,只保留唯一的 //.sorted()排序
 
-                // 20 partitioning by // output {false=[Alice, Charlie], true=[Bob,David]}
+                // 20 partitioning by // output {false=[Alice, Charlie], true=[Bob,David]} easy
                 List<Student> students2 = Arrays.asList(new Student("Alice", 45), new Student("Bob", 55), new Student(
                                 "Charlie", 40), new Student("David", 70));
+                Map<Boolean, List<Student>> result15 = students2.stream().collect(Collectors.partitioningBy(
+                                student -> student.getScore() > 50));
+                System.out.println(result15.toString());// {false=[Alice, Charlie], true=[Bob,David]}
 
                 // 21 joining Strings //output "Java, Streams, Are, Fun"
                 List<String> words4 = Arrays.asList("Java", "Streams", "Are", "Fun");
+                // String result16 = words4.stream().collect(Collectors.joining(", "));
+                // List<String> result16 = words4.stream().collect(Collectors.toList());
+                // System.out.println(words4);// [Java, Streams, Are, Fun]
+                // System.out.println(result16);// Java, Streams, Are, Fun
+                String result16 = words4.stream().collect(Collectors.joining(", ", "\"",
+                                "\""));
+                System.out.println(result16);// "Java, Streams, Are, Fun"
+                // joining is frome Collectors class method//作用是将一个流中的元素连接成一个字符串。
+                // joining(String delimiter分隔符, String prefix前綴, String suffix後綴)
 
                 // 22 find first and any // output 9
                 List<Integer> number6 = Arrays.asList(4, 7, 9, 12, 16, 21);
+                List<Integer> result17 = number6.stream().filter(e -> e % 3 == 0).collect(Collectors.toList());
+                System.out.println(result17.get(0));// 9
 
                 // 23 limit and skip //output [4,5,6,7,8]
                 List<Integer> number7 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+                // List<Integer> result18 =
+                // number7.stream().limit(4).collect(Collectors.toList());
+                // System.out.println(result18);// [4,5,6,7]
+                // List<Integer> result19 =
+                // number7.stream().skip(3).collect(Collectors.toList());
+                // System.out.println(result19);// [4,5,6,7,8,9,10]
+                List<Integer> result20 = number7.stream().limit(8).skip(3).collect(Collectors.toList());
+                // limit:取前n个，skip:跳过前n个
+                System.out.println(result20);// [4,5,6,7]
 
                 // 24 Peek (Debugging in Streams)// Intermedidte output 2,4,6,8 // final
                 // output[2,4,6,8]
                 List<Integer> number8 = Arrays.asList(1, 2, 3, 4);
+                List<Integer> result21 = number8.stream().map(e -> e * 2).peek(System.out::print)
+                                .collect(Collectors.toList());
+                System.out.println(result21);// 2468[2, 4, 6, 8]
 
-                // 25 optional and Streams // output Optional[hello]
+                // 25 optional and Streams // output Optional[hello] easy
                 List<String> words5 = Arrays.asList("hi", "hello", "cat", "dog");
+                Optional<String> result22 = words5.stream().filter(e -> e.length() > 4).findFirst();
+                System.out.println(result22);// Optional[hello]
 
                 // 26 Custom collector //output [1,2,3,4,5,6] (in any order)
                 List<Integer> number9 = Arrays.asList(1, 2, 3, 4, 5, 6);
+                HashSet<Integer> result23 = number9.stream().collect(Collectors.toCollection(LinkedHashSet::new));
+                // just elemets in LinkedHashSet??//LinkedHashSet按照添加顺序put to new, LinkedHashSet
+                // put to HashSet??
+                System.out.println(result23);// [1, 2, 3, 4, 5, 6]
 
                 // 27 using stream to manipulate arrays // output15
                 int[] arr = { 1, 2, 3, 4, 5 };
+                // List<Integer> result24 = Arrays.asList(Arrays.stream(arr).sum());
+                // System.out.println(result24);// [15]
+                int sum = Arrays.stream(arr).sum();
+                System.out.println(sum);// 15
 
                 // 28 String Length Calculation // output 19
                 List<String> words6 = Arrays.asList("Java", "Streams", "Practice");
+                int sumLength = words6.stream().mapToInt(String::length).sum();
+                System.out.println(sumLength);// 19
 
         }
 }
