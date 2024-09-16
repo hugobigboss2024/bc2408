@@ -1,4 +1,7 @@
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 public class home {
   public static void main(String[] args) {
@@ -147,7 +150,14 @@ public class home {
     System.out.println("r2 = " + r2);// int 58
     System.out.println("r3 = " + r3);// String "55"
     System.out.println(r4);// long
+    ///////////////////////////////////
+    String[] w1 = { "abc", "aaaaa", "bcdef" };
+    String t1 = "aabcdabc";
+    String[] w2 = { "abababab", "ab" };
+    String t2 = "ababaababa";
 
+    System.out.println(minValidStrings(w1, t1));// 3
+    System.out.println(minValidStrings(w2, t2));// 2
   }
 
   public static void change(int[] arr1) {
@@ -167,5 +177,32 @@ public class home {
       index++;
     }
     return newArr;
+  }
+
+  public static int minValidStrings(String[] words, String target) {
+    // Minimum Number of Valid Strings to Form Target I
+    // You are given an array of strings words and a string target.
+    // A string x is called valid if x is a prefixof any string in words.
+    // Return the minimum number of valid strings that can be concatenated to form
+    // target. If it is not possible to form target, return -1.
+    // A prefix of a string is a substring that starts from the beginning of the
+    // string and extends to any point within it.
+    // Example 1:Input: words = ["abc","aaaaa","bcdef"], target = "aabcdabc".
+    // Output: 3
+    Set<String> wordSet = new HashSet<>(Arrays.asList(words));
+    int n = target.length();
+    int[] dp = new int[n + 1];
+    Arrays.fill(dp, n + 1);
+    dp[0] = 0;
+
+    for (int i = 1; i <= n; i++) {
+      for (int j = 0; j < i; j++) {
+        if (wordSet.contains(target.substring(j, i))) {
+          dp[i] = Math.min(dp[i], dp[j] + 1);
+        }
+      }
+    }
+
+    return dp[n] > n ? -1 : dp[n];
   }
 }
