@@ -7,8 +7,8 @@ public class DemoThread {
         // Example of Process: Lanuch a MS word software
         // Example of Thread: Something listen to you keyboard, and then execute
         // different tasks.
-        // Example 2 of Thread: Something is checking your grammer mistakes, and then
-        // underlined red.
+        // Example 2 of Thread: Something is checking your grammer mistakes, and
+        // then underlined red.
 
         // ! What is thread in Java? How to create THread?
         // Define a task
