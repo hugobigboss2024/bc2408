@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Supplier;
+import java.util.function.Supplier;  
 
 public class DemoMethodReference {
 
@@ -38,6 +38,7 @@ public class DemoMethodReference {
         Comparator<String> formula2 = String::compareTo;
         Collections.sort(strings, formula2);
         System.out.println(strings); // [apple, banana, orange]
+        
 
     }
 }

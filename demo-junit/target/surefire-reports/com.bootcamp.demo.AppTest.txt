@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.bootcamp.demo.AppTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.193 s <<< FAILURE! - in com.bootcamp.demo.AppTest
+testAssertTimeout  Time elapsed: 0.09 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: execution exceeded timeout of 60 ms by 5 ms
+	at com.bootcamp.demo.AppTest.testAssertTimeout(AppTest.java:43)
+

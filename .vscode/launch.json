@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "com.bootcamp.demo.App",
+            "projectName": "demo-lombok"
+        },
+        {
+            "type": "java",
             "name": "ExerciseStream",
             "request": "launch",
             "mainClass": "exercise.ExerciseStream",
