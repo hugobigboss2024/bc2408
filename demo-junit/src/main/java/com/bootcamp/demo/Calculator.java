@@ -1,6 +1,25 @@
 package com.bootcamp.demo;
 
+import java.util.List;
+
 public class Calculator {
+    private List<Integer> arr;
+
+    public Calculator(List<Integer> arr) {
+        this.arr = arr;
+    }
+
+    public List<Integer> getScores() {
+        return this.arr;
+    }
+
+    public int findMin() {
+        int min = Integer.MAX_VALUE;
+        for (int x : this.arr) {
+            min = Math.min(x, min);
+        }
+        return min;
+    }
 
     // if overflow, return -1;
     public static int sum(int x, int y) {
