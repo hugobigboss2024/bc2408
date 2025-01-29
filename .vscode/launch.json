@@ -6,6 +6,19 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CrumbService",
+            "request": "launch",
+            "mainClass": "com.example.demoyahoo1.service.CrumbService"
+        },
+        {
+            "type": "java",
+            "name": "DemoString",
+            "request": "launch",
+            "mainClass": "DemoString",
+            "projectName": "bc2408_79e05aef"
+        },
+        {
+            "type": "java",
             "name": "App",
             "request": "launch",
             "mainClass": "com.bootcamp.demo.App",
